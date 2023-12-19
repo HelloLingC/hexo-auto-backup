@@ -1,0 +1,14 @@
+{
+    "name": "hexo-auto-backup",
+    "version": "0.0.3",
+    "description": "This Hexo plugin seamlessly automates the backup process for your Hexo data, encompassing posts, drafts, pages, and theme files, ensuring local and cloud drive storage.",
+    "keywords": ["hexo", "blog", "autobackup", "backup"],
+    "author": "LingC",
+    "license": "MIT",
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/HelloLingC/hexo-auto-backup.git"
+    },
+    "homepage": "https://github.com/HelloLingC/hexo-auto-backup",
+    "main": "index"
+  }
