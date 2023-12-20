@@ -37,7 +37,7 @@ Append the plugin config to your global _config.yml:
 
 ```
 autobackup:
-enable: true
+    enable: true
     # Each time the hexo-auto-backup runs, it will remove backups that exceed the predefined time limit. The unit is day.
     expire: 30
     type:

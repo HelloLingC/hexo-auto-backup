@@ -14,6 +14,7 @@ var config = Object.assign({
 const flag = "Auto Backup Plugin: "
 const w_rclone_filename = "rclone.exe"
 const hexo_dir = path.dirname(path.dirname(__dirname));
+const dir = utils.genDateStr();
 
 hexo.on('after_deploy', function () {
     if (!config.enable) {
@@ -22,16 +23,12 @@ hexo.on('after_deploy', function () {
     start();
 });
 
-const dir = utils.genDateStr();
-start();
-
 function start() {
     hexo.log.info(flag + "Backup " + dir);
     config.type.forEach(ele => {
         parseType(ele);
     });
 }
-
 
 function parseType(type) {
     const arr = type.split("<");
