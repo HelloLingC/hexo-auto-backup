@@ -35,11 +35,15 @@ Install the plugin:
 
 `npm install hexo-auto-backup`
 
+Download rclone.exe at https://rclone.org/downloads/
+
 Append the plugin config to your global _config.yml: 
 
 ```
 autobackup:
     enable: true
+    # The path of a folder where rclone.exe is
+    rclonepath: C:\Users\lingc
     # Each time the hexo-auto-backup runs, it will remove backups that exceed the predefined time limit. The unit is day.
     expire: 30
     type:
@@ -55,15 +59,9 @@ autobackup:
 
 ## Cloud Backup
 
-If you wanna backup your data onto cloud drives, you must configure rclone first.
+If you want to backup your data onto cloud drives, you must configure rclone first.
 
-To do so, download rclone at https://rclone.org/downloads/
-
-Then provide the path of rclone.exe in the plugin config.
-
-```
-rclonepath: C:\Users\lingc
-```
+If you only require local backups, then only provide `rclonepath`.
 
 Follow the [rclone docs](https://rclone.org/docs/) to configure your rclone with your needed platform.
 

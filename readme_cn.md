@@ -33,11 +33,15 @@
 
 `npm install hexo-auto-backup`
 
+请在 https://rclone.org/downloads/ 下载rclone.exe
+
 将插件的配置追加到你的全局 _config.yml 中：
 
 ```
 autobackup:
     enable: true
+    # 包含rclone.exe的文件夹的路径
+    rclonepath: C:\Users\lingc
     # 每次hexo-auto-backup运行时，将会删除超过预定义时间限制的备份。时间单位为天。
     expire: 30
     type:
@@ -54,14 +58,9 @@ autobackup:
 
 如果你想将数据备份到云盘，你必须首先配置rclone。
 
-为此，请在 https://rclone.org/downloads/ 下载rclone。
+如果你只需要本地备份，提供一个`rclonepath`变量即可。
 
-然后在插件配置中提供rclone.exe的路径。
-
-```
-rclonepath: C:\Users\lingc
-```
-
-按照 rclone文档 的指导，使用所需的平台配置你的rclone。
+`
+按照 [rclone 文档](https://rclone.org/docs/) 的指导，根据所需的平台配置你的rclone。
 
 Rclone非常好用，因为他们编写了很多友好且有用的文档，这将在每个步骤中帮助你。
