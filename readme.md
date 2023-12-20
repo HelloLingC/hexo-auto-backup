@@ -1,5 +1,7 @@
 # Hexo Auto Backup
 
+[中文版](readme_cn.md) | English
+
 This Hexo plugin seamlessly automates the backup process for your Hexo data, encompassing posts, drafts, pages, and theme files, ensuring local and cloud drive storage.
 
 The automatic backup action will happen everytime when you deploy your hexo blog.
@@ -8,7 +10,7 @@ The backup cotains package.json, `_config.yml` and the whole of your `source`, `
 
 Since this plugin is based on Rclone, it extends support to the same range of platforms as Rclone does:
 
-- Local, like a portable USB or a sd card
+- Local, like a portable USB or a SD Card
 - FTP
 - Google Drive
 - OneDrive
@@ -25,7 +27,7 @@ According to 321 backup strategy: 3 Copies of Your Data, 2 Different Storage Med
 
 This will be the best practice to properly save your precious data.
 
-If you are using Github Pages to hold your blog, it means your drafts and theme files totally have no copies!
+If you are using Github Pages to hold your blog, it means your configs, drafts and theme files totally have no copies!
 
 # How to Use
 
@@ -44,7 +46,7 @@ autobackup:
         - local > A:\blog-backup
         - onedrive > \blog-backup
         - googledrive > \backup
-    # Use ">" to separate the arguments.
+    # You can add mutiple types, use ">" to separate the arguments for each type.
     # The local always refers to a local disk, or a usb
     # The first argument is the remote name configured in rclone,
     # which represents a service,
