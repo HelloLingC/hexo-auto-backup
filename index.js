@@ -47,7 +47,7 @@ function parseType(type) {
     const themes = path.join(real_dest_path, "themes")
     // const packagejson = path.join(real_dest_path, "package.json")
     // const configyml = path.join(real_dest_path, "_config.yml")
-    if (!config.rclonepath) {
+    if (!config.rclonepath) {hex
         hexo.log.error(flag + "rclonepath not defined!");
         return;
     }
@@ -65,19 +65,27 @@ function parseType(type) {
     } else {
         type += ":";
     }
-    cmd(`${rcp} copy ${o_source} ${type}${source}`)
+    cmdWithOutput(`${rcp} copy ${o_source} ${type}${source}`)
     cmd(`${rcp} copy ${o_themes} ${type}${themes}`)
     cmd(`${rcp} copy ${o_packagejson} ${type}${real_dest_path}`)
     cmd(`${rcp} copy ${o_configyml} ${type}${real_dest_path}`)
     if (type == "") type = "local";
-    hexo.log.info(flag + type + " backup finished!");
+    hexo.log.info(flag + type + " backup running!");
+}
+
+function cmdWithOutput(cmd) {
+    exec(cmd, (error, stdout, stderr) => {
+        if (error) {
+            hexo.log.error(flag + " backup miscondigured!");
+            hexo.log.error(`CMD Err: ${error.message}`);
+        }
+    });
 }
 
 function cmd(cmd) {
     exec(cmd, (error, stdout, stderr) => {
         if (error) {
-            hexo.log.error(`CMD Err: ${error.message}`);
-            return;
+            hexo.log.error(flag + " cmd error!");
         }
     });
 }
